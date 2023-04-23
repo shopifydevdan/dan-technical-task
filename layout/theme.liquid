@@ -1,0 +1,51 @@
+{{ 'dan-grid-and-carousel.css' | asset_url | stylesheet_tag }} 
+
+<section class="dan-grid-and-carousel">
+  <div class="container">
+    <ul class="block-list dan-mobile-carousel">
+      {% for block in section.blocks %}
+          <li class="block">
+              <div class="block-content">
+                <h3 class="block-title">{{ block.settings.title }}</h3>
+              </div>
+              {% if section.settings.enable_block_overlays %}
+                <div class="block-overlay"></div>
+              {% endif %}
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Grid and Carousel",
+    "blocks": [
+        {
+            "type":"block",
+            "name":"Block",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Lorem item"
+                }
+            ]
+        }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_block_overlays",
+        "label": "Enable block overlay", 
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "Grid and Carousel"
+      }
+    ]
+  }
+{% endschema %}
