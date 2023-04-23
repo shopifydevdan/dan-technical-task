@@ -1,0 +1,71 @@
+.dan-grid-and-carousel {
+  overflow: hidden;
+  padding: 48px 0;
+}
+
+.dan-grid-and-carousel .container {
+  padding-left: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dan-grid-and-carousel .block-list {
+  list-style: none;
+  padding-inline-start: 0;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dan-grid-and-carousel .block {
+  position: relative;
+  padding: 16px;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.dan-grid-and-carousel .block .block-overlay {
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.dan-grid-and-carousel .block .block-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+  min-height: 300px;
+}
+
+@media screen and (max-width: 1023px) {
+  .dan-grid-and-carousel .slick-list {
+    width: 80%;
+    overflow: visible;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dan-grid-and-carousel .container {
+    padding-right: 16px;
+  }
+
+  .dan-grid-and-carousel .block-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
